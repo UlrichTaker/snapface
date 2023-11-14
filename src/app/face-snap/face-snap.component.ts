@@ -7,9 +7,8 @@ import { FaceSnap } from '../models/face-snap.model';
   styleUrls: ['./face-snap.component.scss']
 })
 export class FaceSnapComponent {
-  // Pour qu'une propriété puisse être injectée depuis l'extérieur d'un component, il faut lui ajouter le décorateur  @Input()
-  // On crée une propriété  faceSnap  de type  FaceSnap  (votre nouveau type !)
   @Input() faceSnap!: FaceSnap;
+
   buttonText!: string;
 
   ngOnInit() {

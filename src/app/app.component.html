@@ -1,2 +1,9 @@
 <!-- ajouter le sélecteur de notre composant face-snap.component.ts comme balise HTML -->
 <app-face-snap [faceSnap]="mySnap"></app-face-snap>
+<app-face-snap [faceSnap]="myOtherSnap"></app-face-snap>
+<app-face-snap [faceSnap]="myLastSnap"></app-face-snap>
+<!-- on pourrait imaginer un filtre pour montrer uniquement les FaceSnaps ayant plus de 5  snaps  :
+<app-face-snap [faceSnap]="mySnap" *ngIf="mySnap.snaps > 5"></app-face-snap>
+<app-face-snap [faceSnap]="myOtherSnap" *ngIf="myOtherSnap.snaps > 5"></app-face-snap>
+<app-face-snap [faceSnap]="myLastSnap" *ngIf="myLastSnap.snaps > 5"></app-face-snap>
+Dans mon cas, aucun FaceSnap n'est affiché dans cette situation. -->
