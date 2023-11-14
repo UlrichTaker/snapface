@@ -7,7 +7,7 @@
     <!-- On pourrait imaginer un filtre où : <p *ngIf="faceSnap.location === 'Paris'"> pour afficher uniquement les photos prises à Paris. -->
     <p>
       <button (click)="onSnap()">{{ buttonText }}</button>
-      <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps + ', 0)' }">🤌 {{ faceSnap.snaps }}</span><!--ngStyle permet de passer en valeur css la valeur contenue dans la propriété appelée. Ici plus il y aura de snaps plus ils seront affichés en vert  -->
+      <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps + ', 0)' }">🤌 {{ faceSnap.snaps }}</span><!--ngStyle permet de passer en valeur css la valeur contenue dans la propriété appelée. Ici plusvil y aura de snaps plus ils seront affichés en vert  -->
 
     </p>
   </div>
