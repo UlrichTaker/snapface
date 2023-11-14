@@ -63,5 +63,15 @@ export class FaceSnapsService {
         } else {
             throw new Error('FaceSnap not found!');
         }
-    }        
-  }
+    }       
+    addFaceSnap(formValue: { title: string, description: string, imageUrl: string, location?: string }){//La fonction accepte un objet comme argument, qui correspond à l'objet généré par le formulaire 
+      const faceSnap: FaceSnap = {//•	crée un nouvel objet à partir de l'argument en ajoutant les champs manquants 
+        ...formValue,
+        snaps: 0,
+        createdDate: new Date(),
+        id: this.faceSnaps[this.faceSnaps.length - 1].id + 1 //•	ajoute 1 à l' id  du dernier ajouté au tableau pour générer le nouveau, puisque les  id  des FaceSnap sont des entiers croissants 
+        };
+      this.faceSnaps.push(faceSnap);//•	ajoute le FaceSnap au tableau
+      }
+    } 
+  
