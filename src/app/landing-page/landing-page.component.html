@@ -3,5 +3,19 @@
     <div class="landing-links">
         <button (click)="onContinue()">Continuer vers Snapface</button>
     </div>
-  </div>
+    <form (ngSubmit)="onSubmit()"><!-- L'événement  ngSubmit  correspond aux clics sur le bouton de type  submit -->
+        <label for="emailInput">Inscrivez-vous pour recevoir notre newsletter !</label>
+        <input id="emailInput" name="userEmail" type="email" [(ngModel)]="userEmail">
+        <button type="submit">OK!</button>
+    </form>
+    <!-- Pour récupérer le  NgForm  correspondant à votre formulaire, vous allez utiliser une référence locale .
+        Une référence locale, créée avec un dièse  #  comme ci-dessus, permet à Angular d'accéder à l'élément pour, par exemple, l'envoyer comme argument à une méthode.On passe bien  ngForm  et non  NgForm  à la référence locale, car ce n'est pas le type  NgForm  qui nous intéresse, mais la directive  ngForm  .
+        Cette directive est appliquée automatiquement à toutes les balises  form  par Angular -->
+    <form #emailForm="ngForm" (ngSubmit)="onSubmitForm(emailForm)">
+        <input id="emailInput" name="userEmail" type="email" [(ngModel)]="userEmail">
+        <button type="submit">OK!</button>
+    </form>
+</div>
+
+
   
