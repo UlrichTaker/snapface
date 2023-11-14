@@ -18,13 +18,13 @@ export class FaceSnapComponent {
   
   onSnap() {
     if (this.buttonText === 'Oh Snap!') {
-      this.faceSnapsService.snapFaceSnapById(this.faceSnap.id);
-      this.buttonText = 'Oops, unSnap!';
+        this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'snap');
+        this.buttonText = 'Oops, unSnap!';
     } else {
-      this.faceSnap.snaps--;
-      this.buttonText = 'Oh Snap!';
+        this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'unsnap');
+        this.buttonText = 'Oh Snap!';
     }
-  }
+}
 
 }
 export { FaceSnap };
