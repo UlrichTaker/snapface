@@ -1,13 +1,5 @@
-<div class="face-snap-card" [ngClass]="{ snapped: buttonText === 'Oops, unSnap!' }"><!--Seulement si l'utilisateur snappe un élément charger le style de la classe snapped grace à la directive ngclass  -->
-    <h2>{{ faceSnap.title | uppercase }}</h2>
-    <p>Mis en ligne le {{ faceSnap.createdDate | date: 'dd/MM/yy, à HH:mm' }}</p>
-    <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
-    <p>{{ faceSnap.description }}</p>
-    <p *ngIf="faceSnap.location">Photo prise à {{ faceSnap.location }}</p><!-- Afficher la localisation de la photo si cette derniere existe grace à la directive *ngif-->
-    <!-- On pourrait imaginer un filtre où : <p *ngIf="faceSnap.location === 'Paris'"> pour afficher uniquement les photos prises à Paris. -->
-    <p>
-      <button (click)="onSnap()">{{ buttonText }}</button>
-      <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps + ', 0)' }">🤌 {{ faceSnap.snaps }}</span><!--ngStyle permet de passer en valeur css la valeur contenue dans la propriété appelée. Ici plusvil y aura de snaps plus ils seront affichés en vert  -->
-
-    </p>
-  </div>
+<div class="face-snap-card" [ngClass]="{ snapped: buttonText === 'Oops, unSnap!' }">
+  <h2>{{ faceSnap.title | uppercase }}</h2>
+  <p>{{ faceSnap.description }}</p>
+  <button (click)="onViewFaceSnap()">Voir</button>
+</div>

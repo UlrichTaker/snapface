@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FaceSnapsService } from '../services/snaps.service';
+import { Router } from '@angular/router';
 import { FaceSnap } from '../models/face-snap.model';
 
 @Component({
@@ -9,21 +10,15 @@ import { FaceSnap } from '../models/face-snap.model';
 })
 export class FaceSnapComponent {
   @Input() faceSnap!: FaceSnap;//@Input() est utilisée pour indiquer qu'une propriété d'un composant Angular est une propriété d'entrée, ce qui signifie qu'elle peut être passée depuis un composant parent vers ce composant enfant. Dans votre cas, vous avez une propriété faceSnap de type FaceSnap qui est annotée comme une entrée.
-  constructor(private faceSnapsService: FaceSnapsService) {}
+  constructor(private router: Router) {}
   buttonText!: string;
 
   ngOnInit() {
     this.buttonText = 'Oh Snap!'
   }
   
-  onSnap() {
-    if (this.buttonText === 'Oh Snap!') {
-        this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'snap');
-        this.buttonText = 'Oops, unSnap!';
-    } else {
-        this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'unsnap');
-        this.buttonText = 'Oh Snap!';
-    }
+  onViewFaceSnap() {
+    this.router.navigateByUrl(`facesnaps/${this.faceSnap.id}`);
 }
 
 }
