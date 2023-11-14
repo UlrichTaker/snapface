@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
       `Je suis ${value} et je suis impair`
     ),//map() permet de transformer(mapper) les émissions d'un Observable
     //Effet secondaire
-    tap(text => this.logger(text))
+    tap(text => this.logger(text)),
     );
      
   }
